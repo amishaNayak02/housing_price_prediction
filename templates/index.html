@@ -3,64 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Boston House Pricing Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 25px;
+        }
+
+        label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h3 {
+            text-align: center;
+            color: green;
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h2>BOSTON HOUSE PRICING PREDICTION</h2>
     <form action="/predict" method="post">
-      
-        <label for="CRIM">CRIM:</label><br>
-        <input type="text" name="CRIM"><br>
+        <h2>BOSTON HOUSE PRICING PREDICTION</h2>
 
-        <label for="ZN">ZN:</label><br>
-        <input type="text" name="ZN"><br>
+        <label for="CRIM">CRIM:</label>
+        <input type="text" name="CRIM">
 
-        <label for="INDUS">INDUS:</label><br>
-        <input type="text" name="INDUS"><br>
+        <label for="ZN">ZN:</label>
+        <input type="text" name="ZN">
 
-        <label for="CHAS">CHAS:</label><br>
-        <input type="text" name="CHAS"><br>
+        <label for="INDUS">INDUS:</label>
+        <input type="text" name="INDUS">
 
-        <label for="NOX">NOX:</label><br>
-        <input type="text" name="NOX"><br>
+        <label for="CHAS">CHAS:</label>
+        <input type="text" name="CHAS">
 
-        <label for="RM">RM:</label><br>
-        <input type="text" name="RM"><br>
+        <label for="NOX">NOX:</label>
+        <input type="text" name="NOX">
 
-        <label for="AGE">AGE:</label><br>
-        <input type="text" name="AGE"><br>
+        <label for="RM">RM:</label>
+        <input type="text" name="RM">
 
-        <label for="DIS">DIS:</label><br>
-        <input type="text" name="DIS"><br>
+        <label for="AGE">AGE:</label>
+        <input type="text" name="AGE">
 
-        <label for="RAD">RAD:</label><br>
-        <input type="text" name="RAD"><br>
+        <label for="DIS">DIS:</label>
+        <input type="text" name="DIS">
 
-        <label for="TAX">TAX:</label><br>
-        <input type="text" name="TAX"><br>
+        <label for="RAD">RAD:</label>
+        <input type="text" name="RAD">
 
-        <label for="PIRATIO">PIRATIO:</label><br>
-        <input type="text" name="PIRATIO"><br>
+        <label for="TAX">TAX:</label>
+        <input type="text" name="TAX">
 
-        <label for="B">B:</label><br>
-        <input type="text" name="B"><br>
+        <label for="PIRATIO">PIRATIO:</label>
+        <input type="text" name="PIRATIO">
 
-        <label for="LSTAT">LSTAT:</label><br>
-        <input type="text" name="LSTAT"><br>
+        <label for="B">B:</label>
+        <input type="text" name="B">
 
-        <br>
-        <input type="submit" value="predict"><br>
+        <label for="LSTAT">LSTAT:</label>
+        <input type="text" name="LSTAT">
 
-    
+        <input type="submit" value="Predict">
 
-    
-
-    
+        {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+        {% endif %}
     </form>
-    
-    {% if prediction_text %}
-     <h3> {{ prediction_text }} </h3>
-     {% endif %}
-   
 </body>
 </html>
