@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>BOSTON HOUSE PRICING PREDICTION</h2>
+    <form action="/predict" method="post">
+      
+        <label for="CRIM">CRIM:</label><br>
+        <input type="text" name="CRIM"><br>
+
+        <label for="ZN">ZN:</label><br>
+        <input type="text" name="ZN"><br>
+
+        <label for="INDUS">INDUS:</label><br>
+        <input type="text" name="INDUS"><br>
+
+        <label for="CHAS">CHAS:</label><br>
+        <input type="text" name="CHAS"><br>
+
+        <label for="NOX">NOX:</label><br>
+        <input type="text" name="NOX"><br>
+
+        <label for="RM">RM:</label><br>
+        <input type="text" name="RM"><br>
+
+        <label for="AGE">AGE:</label><br>
+        <input type="text" name="AGE"><br>
+
+        <label for="DIS">DIS:</label><br>
+        <input type="text" name="DIS"><br>
+
+        <label for="RAD">RAD:</label><br>
+        <input type="text" name="RAD"><br>
+
+        <label for="TAX">TAX:</label><br>
+        <input type="text" name="TAX"><br>
+
+        <label for="PIRATIO">PIRATIO:</label><br>
+        <input type="text" name="PIRATIO"><br>
+
+        <label for="B">B:</label><br>
+        <input type="text" name="B"><br>
+
+        <label for="LSTAT">LSTAT:</label><br>
+        <input type="text" name="LSTAT"><br>
+
+        <br>
+        <input type="submit" value="predict"><br>
+
+    
+
+    
+
+    
+    </form>
+    
+    {% if prediction_text %}
+     <h3> {{ prediction_text }} </h3>
+     {% endif %}
+   
+</body>
+</html>
